@@ -6,7 +6,7 @@
     }
 
     .tm-banner-text {
-        animation: none;
+        animation: step-end;
     }
 
     section::before {
