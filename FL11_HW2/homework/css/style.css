@@ -1,6 +1,107 @@
+@media print {
+
+	.tm-sidebar, #about, #contact, .tm-team-img,
+	.carousel-indicators,.gallery-container, .blocks.tm-content-box, section:last-of-type {
+        display: none;
+    }
+
+    .tm-banner-text {
+        animation: none;
+    }
+
+    section::before {
+        border:none;
+    }
+    
+    .tm-main-content, .tm-banner {
+        padding: 0;
+        margin: 0;
+    }
+    
+    .padding-medium, .carousel {
+        padding: 0px;
+
+    }
+    .tm-banner {
+        width: 100%;
+        background-color: white;
+    }
+    
+    .tm-banner-inner {
+        width: 100%;
+
+    }
+    .container {
+        max-width: 1080px;
+        display: flex;
+
+    }
+    .tm-content-box, .blocks {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        text-align: center;
+    }
+
+    .padding-medium ol {
+        padding-left: 0px;
+    }
+
+    .padding-medium  li {
+        list-style-type: none;
+    }
+
+    .padding-medium li a {
+        color: #000000;
+        text-decoration: none;
+    }
+    .padding-medium  li::first-letter {
+        color: lightskyblue;
+        font-size: 25px;
+
+    }
+
+    .heading  {
+        display: flex;
+        justify-content: space-around;
+        align-content: center;
+    }
+
+    .heading  li:nth-child(even) {
+        padding-left: 250px;
+    }
+
+    .heading  li:nth-child(odd) {
+        padding-right: 250px;
+    }
+
+    .heading .text::after {
+        content: "";
+    }
+
+    .padding-medium h2{
+    	color: lightskyblue;
+    	font-size: 25px;
+
+    }
+
+    h2 + p {
+        font-style: normal;
+        line-height: inherit;
+    }
+
+    .carousel-content{
+    	margin-top: 100px;
+    }
+        
+}
+
+
+@media screen {
+
 .tm-section-title-box:hover {
     background-color:#7fb9de;
-    color: #ffffff;
+    color: white;
 }
 
 .tm-main-nav, .blocks, .tm-content-box{
@@ -132,5 +233,44 @@ section::before {
     color: #ffffff;
 }
 
+.tm-nav-item:hover {
+    background: #cecece;
+}
 
+h2 + p {
+    font-style: italic;
+    line-height: 27px;
+}
+
+p {
+    text-indent: 25px;
+}
+
+.tm-content-box.flex-2-col {
+    display: flex;
+    align-items: center;
+}
+
+.tm-banner-text {
+    text-shadow: 0px 3px 1px #76cdd7, 0px 6px 2px #42f1f4;
+    letter-spacing: 0.2em;
+    word-spacing: 0.2em;
+    animation: scale 3s infinite ;
+    animation-iteration-count: 2;
+}
+
+@keyframes scale {
+    0% {
+        transform: scaleX(1);
+    }
+
+    50% {
+        transform: scaleX(-1);
+    }
+
+    100% {
+        transform: scaleX(1);
+    }
+}
+}
 
