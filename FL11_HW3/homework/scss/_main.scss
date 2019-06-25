@@ -1,1 +1,298 @@
-// Write your styles here
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@mixin hdfont {
+    font-family: $headfont;
+    color: map-get($colors, headcolor);
+}
+
+@mixin button {
+    background-color: map-get($colors, bttncolor);
+    font-family: $headfont;
+    color: white;
+    border: none;
+    font-size: 15px;
+    padding: 10px 34px;
+    border-radius: 2px;
+    
+    &:hover {
+        color: #000000;
+        background-color: map-get($colors, bttncolor-hov);
+        border-width: 1px;
+        border-color: #a5e833;
+    }
+}
+
+
+body {
+  background-color: map-get($colors, bckcolor);
+}
+
+.header {
+    
+    background: $bckimage;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid transparent;
+    border-radius: 0 0 30% 0;
+
+    .header-wrap {
+        width: 80%;
+        margin: 0 auto;
+
+      .landing-logo {
+         
+         align-items: center;
+         display: flex;
+         justify-content: flex-start;
+         padding-top: 12px;
+         
+         p {
+         padding-left: 10px;
+         font-family: $bodyfont;
+         color: #1c1f30;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         font-weight: bold;
+         font-size: 24px;
+         line-height: 0.8;
+        
+         span {
+            font-size: 12px;
+         }
+         }
+        }
+
+      .header_heading {
+
+          @include hdfont;
+          font-weight: bold;
+          font-size: 48px;
+          margin: 40px 0;
+          max-width: 400px;
+          position: relative;
+          z-index: 1;
+            
+          &::before {
+              content: '';
+              background-color: map-get($colors, linecol);
+              height: 16px;
+              width: 225px;
+              z-index: -1;
+              bottom: 5px;
+              position: absolute;
+
+              }
+
+        }
+
+        .header_text {
+
+            font-family: $bodyfont;
+            color: #bec0c6;
+            max-width: 540px;
+            font-size: 16px;
+        }
+
+        .header_button {
+            @include button;
+            margin: 42px 0 120px 0;
+        }
+    }
+}
+
+.section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+   .section_text {
+       @include hdfont;
+       font-weight: 580;
+       font-size: 28px;
+       margin: 20px 0;
+       position: relative;
+       width: 300px;
+       z-index: 1;
+
+       &::before {
+           content: '';
+           background-color: map-get($colors, linecol);
+           width: 124px;
+           height: 8px;
+           z-index: -1;
+           position: absolute;
+           right: 30px;
+           top: 21px;
+       }
+
+   }
+
+   .section_card_wrap {
+       display: flex;
+       justify-content: space-between;
+       margin: 0 auto;
+       width: 80%;
+
+       .section_card {
+          
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          background-color: #2b2e42;
+          border-radius: 5px;
+          width: 30%;
+          padding: 15px;
+          color: #ffffff;
+
+          .section_card_img {
+              width: 100%;
+          }
+
+          .section_card_heading {
+
+            @include hdfont;
+            color: #ffffff;
+            font-size: 21px;
+            position: relative;
+            z-index: 1;
+            margin: 10px 0;
+            display: inline-block;
+
+            .section_card_underline {
+
+                position: absolute;
+                z-index: -1;
+                height: 12px;
+                width: 100%;
+                background-color: map-get($colors, linecol);
+                top: 14px;
+            }
+
+          }
+
+          .section_card_text {
+              font-family: $bodyfont;
+              color: #bec0c6;
+              text-align: center;
+              padding-bottom: 10px;
+          }
+
+       }
+
+   }
+
+}
+
+.section_banner {
+
+    width: 65%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    background: map-get($colors, gradient);
+    margin-top: 100px;
+    border-radius: 5px;
+
+    .section_banner_text_wrap {
+       padding: 22px 0;
+
+        .section_banner_heading {
+
+            @include hdfont;
+            font-size: 24px;
+            font-weight: 580;
+            padding-bottom: 10px;
+            z-index: 1;
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                z-index: -1;
+                height: 10px;
+                width: 46px;
+                top: 18px;
+                left: 95px;
+                background-color: map-get($colors, linecol);
+            }
+
+        }
+
+        .section_banner_text {
+
+            font-family: $bodyfont;
+            color: #bec0c6;
+
+        }
+
+    }
+
+    .section_banner_button {
+        @include button;
+    }
+
+}
+
+.footer {
+
+    background-color: #21232e;
+    color: #bec0c6;
+    padding: 95px 0 40px 0;
+    margin-top: -60px;
+
+    .footer-wrap {
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .footer_logo {
+
+           justify-content: flex-start;
+           align-items: center;
+           display: flex;
+           padding-top: 12px;
+
+            p {
+            padding-left: 10px;
+            font-family: $bodyfont;
+            color: #bec0c6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 0.8;
+        
+            span {
+            font-size: 11px;
+             }
+
+
+        }
+
+        .footer_text {
+            font-family: $bodyfont;
+            width: 25%;
+            line-height:60%;
+            text-align: center;
+            hyphens: auto;
+            max-width: 100px;
+
+        }
+
+        .footer-cr {
+            @extend .footer_text;
+        }
+
+    }
+
+ }
+
+}
