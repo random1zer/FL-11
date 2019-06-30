@@ -63,7 +63,7 @@ header {
 
 
 
-.header_wrapper ul li:nth-child {
+.header_wrapper ul li:nth-of-type {
     margin-left: 50px;
 }
 
@@ -98,7 +98,7 @@ header {
 
     font-size: 15px;
     color: #FFFFFF;
-    margin: 20;
+    margin: 20px;
 }
 
 
@@ -187,7 +187,7 @@ main {
 
 
 .main_underline_text span {
-    font-weight: 550;
+    font-weight: 600;
 }
 
 
