@@ -1,9 +1,3 @@
-
-
-
-
-
-// t_0
 function getNumbers(str) {
   let ar = [];
   for (let i = 0; i < str.length; i++) {
