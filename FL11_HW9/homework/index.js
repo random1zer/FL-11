@@ -54,8 +54,27 @@ function mapArray(array, functionM) {
     return arg
 }
 
-t_4
+//t_4
 
+function filterArray(arr, func) {
+	let filt = [];
+	executeforEach(arr, function(el) {
+		if (func(el)) {
+			filt.push(el);
+		}
+	});
+
+	return filt;
+}
+
+//t_5
+
+function showFormattedDate(received_date) {
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    let month_index = received_date.getMonth();
+    let result = 'Date: ' + months[month_index] + ' ' + received_date.getDate() + ' ' + received_date.getFullYear();
+    return result;
+}
 
 
 
