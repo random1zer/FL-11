@@ -70,12 +70,16 @@ function filterArray(arr, func) {
 //t_5
 
 function showFormattedDate(received_date) {
-    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-    let month_index = received_date.getMonth();
-    let result = 'Date: ' + months[month_index] + ' ' + received_date.getDate() + ' ' + received_date.getFullYear();
+    const mon = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    let mon_ind = received_date.getMonth();
+    let result = 'Date: ' + mon[mon_ind] + ' ' + received_date.getDate() + ' ' + received_date.getFullYear();
     return result;
 }
 
+//task6
+function canConvertToDate(data){
+    return !!Date.parse(data);
+}
 
 
 
