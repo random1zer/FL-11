@@ -13,7 +13,7 @@ console.log(getNumbers(‘string’));
 console.log(getNumbers(‘n1um3ber95’)); 
 
 
-// t_1
+
 
 function findTypes(...arg) {
     const type = [];
@@ -30,15 +30,13 @@ function findTypes(...arg) {
     return type;
 }
 
-// t_2
+
 
 function executeforEach(array, functionE) {
     for (let x = 0; x < array.length; x++) {
         functionE(array[x])
     }
 }
-
-// t_3
 
 function mapArray(array, functionM) {
     let arg = []
@@ -48,7 +46,7 @@ function mapArray(array, functionM) {
     return arg
 }
 
-//t_4
+
 
 function filterArray(arr, func) {
 	let filt = [];
@@ -61,7 +59,6 @@ function filterArray(arr, func) {
 	return filt;
 }
 
-//t_5
 
 function showFormattedDate(received_date) {
     const mon = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -70,9 +67,42 @@ function showFormattedDate(received_date) {
     return result;
 }
 
-//task6
+
 function canConvertToDate(data){
     return !!Date.parse(data);
+}
+
+
+
+function daysBetween(x,y){
+    const dayinMs = 86400000
+    let date1 = new Date(x);
+    let date2 = new Date(y);
+    let dDays = Math.round((date2 - date1) / dayinMs); 
+   return dDays
+}
+
+function getAmountOfAdultPeople(data){
+    const age = 18;
+    const ear = 365;
+    let now = new Date();
+
+    return filterArray(data, function (x) {
+        let birthDate = new Date(x.birthday);
+        return Math.round(daysBetween(birthDate, now) / ear) > age
+    }).length;
+}
+
+
+function keys() {
+    let keyArr = []
+    for (let i = 0; i < arguments.length; i++) {
+        let keyEl = arguments[i]
+        for (let [key] of Object.entries(keyEl)) {
+            keyArr.push(key)
+        }
+    }
+    return keyArr
 }
 
 
