@@ -105,7 +105,15 @@ function keys() {
     return keyArr
 }
 
-
+function values(received_object) {
+    let arr = [];
+    for (let prop in received_object) {
+        if ({}.hasOwnProperty.call(received_object, prop)) {
+            arr.push(received_object[prop]);
+        }
+    }
+    return arr;
+}
 
 const data = [
     {
